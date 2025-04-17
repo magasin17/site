@@ -3,10 +3,9 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-black via-indigo-900 to-purple-900 text-white p-8 overflow-x-hidden">
-      <nav className="flex justify-between items-center mb-12">
+      <nav className="flex justify-between items-center mb-12 flex-wrap">
         <div className="text-xl font-semibold">cryptolooser.com</div>
-        <ul className="flex gap-6 text-sm">
-          <li><Link href="/">Home</Link></li>
+        <ul className="flex flex-wrap gap-6 text-sm mt-4 sm:mt-0">
           <li><Link href="/don">Donate</Link></li>
           <li><Link href="/confirmation">Confirmation</Link></li>
         </ul>
