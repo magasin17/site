@@ -19,6 +19,7 @@ export default function Don() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-black via-indigo-900 to-purple-900 text-white p-8 overflow-x-hidden">
       <section className="max-w-2xl mx-auto">
+        <Link href="/" className="text-indigo-400 underline mb-4 block text-sm">← Retour à l’accueil</Link>
         <h1 className="text-4xl font-bold mb-6 text-center">Faire un don</h1>
         <p className="text-gray-300 text-center mb-10">
           Choisissez une cryptomonnaie et envoyez <strong>au minimum 49 $</strong> à l’adresse correspondante :
