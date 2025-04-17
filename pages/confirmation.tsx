@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Confirmation() {
   const [submitted, setSubmitted] = useState(false);
@@ -9,8 +10,9 @@ export default function Confirmation() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-black via-indigo-900 to-purple-900 text-white p-8">
+    <main className="min-h-screen bg-gradient-to-br from-black via-indigo-900 to-purple-900 text-white p-8 overflow-x-hidden">
       <section className="max-w-xl mx-auto">
+        <Link href="/" className="text-indigo-400 underline mb-4 block text-sm">← Retour à l’accueil</Link>
         <h1 className="text-3xl font-bold mb-6 text-center">Confirmation de don</h1>
 
         {submitted ? (
