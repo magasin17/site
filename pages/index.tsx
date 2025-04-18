@@ -20,12 +20,12 @@ export default function Home() {
       <main className="min-h-screen text-white px-6 py-10">
         {/* Navigation */}
         <nav className="flex justify-between items-center mb-12 flex-wrap">
-          <div className="text-2xl font-bold">cryptolost.net</div>
-          <ul className="flex gap-6 text-sm">
-            <li><Link href="/don">Donation</Link></li>
-            <li><Link href="/confirmation">Confirmation</Link></li>
-          </ul>
-        </nav>
+  <div className="text-2xl font-bold">cryptolost.net</div>
+  <ul className="flex gap-6 text-sm">
+    <li><Link href="/don">Donation</Link></li>
+    <li><Link href="/confirmation">Confirmation</Link></li>
+  </ul>
+</nav>
 
         {/* Sélecteur de langue */}
         <div className="absolute top-6 right-6 flex gap-3">
