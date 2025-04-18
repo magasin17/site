@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Don() {
   return (
     <>
-      {/* Fond de page */}
+      {/* Fond 3D */}
       <div
         style={{
           position: 'fixed',
@@ -18,21 +18,22 @@ export default function Don() {
 
       <main className="relative min-h-screen text-white px-6 py-16 overflow-x-hidden">
         <section className="max-w-5xl mx-auto text-center">
+          {/* Bouton retour stylé avec espacement */}
+          <div className="mb-8">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 transition"
+              aria-label="Retour"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </Link>
+          </div>
 
-          {/* Flèche retour seule */}
-          <Link
-            href="/"
-            className="inline-flex items-center text-indigo-400 hover:text-white transition mb-6"
-            aria-label="Retour"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-            </svg>
-          </Link>
-
-          {/* Titre pro stylisé */}
-          <h1 className="text-4xl font-bold text-white mb-6 tracking-wide border-b border-white/20 inline-block pb-2">
-            Faire un don
+          {/* Titre stylisé avec gradient comme la home */}
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-8 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
+            FAIRE UN DON
           </h1>
 
           <p className="text-gray-300 mb-2">
