@@ -18,21 +18,21 @@ export default function Don() {
 
       <main className="relative min-h-screen text-white px-6 py-16 overflow-x-hidden">
         <section className="max-w-5xl mx-auto text-center">
-          {/* Lien retour en version plus pro */}
+
+          {/* Flèche retour seule */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm text-indigo-400 hover:text-white transition mb-6"
+            className="inline-flex items-center text-indigo-400 hover:text-white transition mb-6"
+            aria-label="Retour"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
             </svg>
-            Retour à l’accueil
           </Link>
 
-          {/* Titre amélioré */}
-          <h1 className="text-4xl font-extrabold mb-8 bg-gradient-to-r from-fuchsia-500 to-indigo-500 text-transparent bg-clip-text tracking-wider drop-shadow-2xl relative inline-block">
+          {/* Titre pro stylisé */}
+          <h1 className="text-4xl font-bold text-white mb-6 tracking-wide border-b border-white/20 inline-block pb-2">
             Faire un don
-            <span className="block h-1 mt-1 bg-indigo-500/50 blur-sm rounded-full w-1/2 mx-auto"></span>
           </h1>
 
           <p className="text-gray-300 mb-2">
