@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      {/* Fond de page */}
+      {/* Fond 3D */}
       <div
         style={{
           position: 'fixed',
@@ -26,7 +26,7 @@ export default function Home() {
           </ul>
         </nav>
 
-        {/* Titre */}
+        {/* Titre + bouton */}
         <section className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
             FAITES UN DON CRYPTO ET RECEVEZ UN GUIDE EXCLUSIF
@@ -42,13 +42,9 @@ export default function Home() {
           >
             FAIRE UN DON
           </Link>
-
-          <p className="mt-4 text-sm text-gray-400">
-            Une fois votre don effectué, pensez à remplir le formulaire dans la section <Link href="/confirmation" className="underline text-indigo-300">Confirmation</Link>.
-          </p>
         </section>
 
-        {/* Logos crypto */}
+        {/* Encarts crypto */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20 max-w-5xl mx-auto">
           {['bitcoin', 'ethereum', 'solana'].map((coin) => (
             <div
@@ -60,6 +56,13 @@ export default function Home() {
             </div>
           ))}
         </section>
+
+        {/* Texte de confirmation tout en bas */}
+        <div className="text-center mt-12">
+          <p className="text-sm text-gray-400">
+            Une fois votre don effectué, pensez à remplir le formulaire dans la section <Link href="/confirmation" className="underline text-indigo-300">Confirmation</Link>.
+          </p>
+        </div>
       </main>
     </>
   );
