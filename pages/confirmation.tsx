@@ -75,10 +75,9 @@ export default function Confirmation() {
             </form>
           )}
 
-          {/* Texte informatif complet */}
+          {/* Texte informatif complet (corrigé) */}
           <p className="mt-8 text-sm text-gray-400">
-            Une fois votre confirmation validée, vous recevrez le guide sur le mail spécifié.<br />
-            Si vous n'avez pas reçu votre mail, vérifiez vos spams et réitérez le formulaire de confirmation.
+            Une fois votre confirmation validée, vous recevrez votre guide par e-mail. Si vous ne le trouvez pas dans votre boîte de réception, pensez à vérifier vos spams. Vous pouvez également remplir à nouveau ce formulaire si nécessaire.
           </p>
         </section>
       </main>
