@@ -1,10 +1,3 @@
-import Link from 'next/link';
-import Image from 'next/image';
-
 export default function Home() {
-  return (
-    <>
-      {/* DEUTSCHE SEITE */}
-    </>
-  );
+  return <div className="text-white p-10">Deutsche Startseite</div>;
 }
