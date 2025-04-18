@@ -4,6 +4,11 @@ import Link from 'next/link';
 export default function Confirmation() {
   const [submitted, setSubmitted] = useState(false);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
     <>
       {/* Fond de page */}
@@ -21,7 +26,7 @@ export default function Confirmation() {
 
       <main className="relative min-h-screen flex flex-col items-center px-6 py-16 text-white overflow-x-hidden">
         <section className="max-w-xl w-full">
-          <Link href="/" className="text-indigo-400 underline mb-4 block text-sm">← Retour à l’accueil</Link>
+          <Link href="/" className="text-indigo-400 underline mb-6 block text-sm">← Retour à l’accueil</Link>
           <h1 className="text-3xl font-bold mb-6 text-center drop-shadow-lg">Confirmation de don</h1>
 
           {submitted ? (
@@ -32,7 +37,7 @@ export default function Confirmation() {
               </p>
             </div>
           ) : (
-            <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <input
                 required
                 className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 placeholder-gray-400 text-white"
@@ -57,6 +62,13 @@ export default function Confirmation() {
               </button>
             </form>
           )}
+
+          {/* Texte informatif final */}
+          <p className="mt-8 text-sm text-gray-400 text-center">
+            Une fois votre confirmation validée, vous recevrez votre guide par e-mail.
+            Si vous ne le trouvez pas dans votre boîte de réception, pensez à vérifier vos spams.
+            Vous pouvez également remplir à nouveau ce formulaire si nécessaire.
+          </p>
         </section>
       </main>
     </>
