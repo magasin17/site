@@ -33,8 +33,9 @@ export default function Home() {
           </h1>
           <p className="text-lg text-gray-300 mb-8">
             Contribuez en BTC, ETH ou SOL et obtenez un guide exclusif :<br />
-            <span className="italic">"Comment ne plus jamais perdre de l'argent en crypto"</span>
-          </p>
+            <div className="mt-4 inline-block px-4 py-2 bg-purple-700/20 text-purple-300 text-base md:text-lg font-semibold rounded-lg shadow-inner">
+  “Comment ne plus jamais perdre de l'argent en crypto”
+</div>
 
           <Link
             href="/don"
