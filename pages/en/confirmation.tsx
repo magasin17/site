@@ -42,7 +42,7 @@ export default function Confirmation() {
         <textarea
           name="message"
           placeholder="Message"
-          rows={4 as number}
+          rows="4"
           className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none"
         />
         <button
