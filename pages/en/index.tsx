@@ -1,5 +1,5 @@
-// pages/en/index.tsx import Link from 'next/link'; import Image from 'next/image';
-
+import Link from 'next/link';
+import Image from 'next/image';
 export default function Home() { return ( <> <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: "url('/hero-bg.jpg') center/cover no-repeat", zIndex: -10 }} />
 
 <main className="min-h-screen text-white px-6 py-10">
