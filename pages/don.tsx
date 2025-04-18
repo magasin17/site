@@ -1,75 +1,70 @@
-import { useState } from 'react';
 import Link from 'next/link';
 
-const wallets = {
-  BTC: 'bc1qt3cgs7ajd2x65cmjr9u66663krt89ha5xhsj9c',
-  ETH: '0x6D3EE24FF55A46f89883043fF810B38F04Bf3485',
-  SOL: '42G1XK8Lz6c9vx5SzxEPg8WR2D3YEtPV7cbjAXqS9TUT',
-};
-
 export default function Don() {
-  const [copied, setCopied] = useState('');
-
-  const handleCopy = (text: string, label: string) => {
-    navigator.clipboard.writeText(text);
-    setCopied(label);
-    setTimeout(() => setCopied(''), 1500);
-  };
-
   return (
-    <main className="min-h-screen bg-gradient-to-br from-black via-indigo-900 to-purple-900 text-white p-8 overflow-x-hidden">
-      <section className="max-w-2xl mx-auto">
-        <Link href="/" className="text-indigo-400 underline mb-4 block text-sm">← Retour à l’accueil</Link>
-        <h1 className="text-4xl font-bold mb-6 text-center">Faire un don</h1>
-        <p className="text-gray-300 text-center mb-10">
-          Choisissez une cryptomonnaie et envoyez <strong>au minimum 49 $</strong> à l’adresse correspondante :
-        </p>
+    <>
+      {/* Fond de page comme sur la page d'accueil */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: "url('/hero-bg.jpg') center/cover no-repeat",
+          zIndex: -10,
+        }}
+      />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* BTC */}
-          <div className="bg-gray-900 p-6 rounded-xl text-center shadow-md">
-            <img src="/bitcoin.png" alt="Bitcoin" className="w-12 h-12 mx-auto mb-2" />
-            <h2 className="text-xl font-semibold mb-2">Bitcoin (BTC)</h2>
-            <p className="text-orange-400 break-all">{wallets.BTC}</p>
-            <button
-              onClick={() => handleCopy(wallets.BTC, 'BTC')}
-              className="mt-3 bg-gray-800 hover:bg-gray-700 px-4 py-1 rounded text-sm"
-            >
-              {copied === 'BTC' ? 'Copié !' : 'Copier'}
-            </button>
+      <main className="relative min-h-screen flex flex-col items-center px-6 py-16 text-white overflow-x-hidden">
+        <section className="max-w-2xl w-full text-center">
+          <Link href="/" className="text-indigo-400 underline mb-6 block text-sm">← Retour à l’accueil</Link>
+          <h1 className="text-3xl font-bold mb-6 drop-shadow-lg">Faire un don</h1>
+          <p className="mb-8 text-gray-300">Vous pouvez contribuer via l'une des adresses suivantes :</p>
+
+          {/* Bitcoin */}
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 mb-6 shadow-xl">
+            <h2 className="text-xl font-semibold mb-2">Bitcoin</h2>
+            <div className="flex items-center justify-between bg-gray-900 rounded-lg p-3">
+              <code className="text-sm break-all">bc1qt3cgs7ajd2x65cmjr9u66663krt89ha5xhsj9c</code>
+              <button
+                className="ml-4 text-sm text-indigo-400 hover:text-indigo-200"
+                onClick={() => navigator.clipboard.writeText('bc1qt3cgs7ajd2x65cmjr9u66663krt89ha5xhsj9c')}
+              >
+                Copier
+              </button>
+            </div>
           </div>
 
-          {/* ETH */}
-          <div className="bg-gray-900 p-6 rounded-xl text-center shadow-md">
-            <img src="/ethereum.png" alt="Ethereum" className="w-12 h-12 mx-auto mb-2" />
-            <h2 className="text-xl font-semibold mb-2">Ethereum (ETH)</h2>
-            <p className="text-blue-400 break-all">{wallets.ETH}</p>
-            <button
-              onClick={() => handleCopy(wallets.ETH, 'ETH')}
-              className="mt-3 bg-gray-800 hover:bg-gray-700 px-4 py-1 rounded text-sm"
-            >
-              {copied === 'ETH' ? 'Copié !' : 'Copier'}
-            </button>
+          {/* Ethereum */}
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 mb-6 shadow-xl">
+            <h2 className="text-xl font-semibold mb-2">Ethereum</h2>
+            <div className="flex items-center justify-between bg-gray-900 rounded-lg p-3">
+              <code className="text-sm break-all">0x6D3EE24FF55A46f89883043fF810B38F04Bf3485</code>
+              <button
+                className="ml-4 text-sm text-indigo-400 hover:text-indigo-200"
+                onClick={() => navigator.clipboard.writeText('0x6D3EE24FF55A46f89883043fF810B38F04Bf3485')}
+              >
+                Copier
+              </button>
+            </div>
           </div>
 
-          {/* SOL */}
-          <div className="bg-gray-900 p-6 rounded-xl text-center shadow-md">
-            <img src="/solana.png" alt="Solana" className="w-12 h-12 mx-auto mb-2" />
-            <h2 className="text-xl font-semibold mb-2">Solana (SOL)</h2>
-            <p className="text-purple-400 break-all">{wallets.SOL}</p>
-            <button
-              onClick={() => handleCopy(wallets.SOL, 'SOL')}
-              className="mt-3 bg-gray-800 hover:bg-gray-700 px-4 py-1 rounded text-sm"
-            >
-              {copied === 'SOL' ? 'Copié !' : 'Copier'}
-            </button>
+          {/* Solana */}
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 mb-6 shadow-xl">
+            <h2 className="text-xl font-semibold mb-2">Solana</h2>
+            <div className="flex items-center justify-between bg-gray-900 rounded-lg p-3">
+              <code className="text-sm break-all">42G1XK8Lz6c9vx5SzxEPg8WR2D3YEtPV7cbjAXqS9TUT</code>
+              <button
+                className="ml-4 text-sm text-indigo-400 hover:text-indigo-200"
+                onClick={() => navigator.clipboard.writeText('42G1XK8Lz6c9vx5SzxEPg8WR2D3YEtPV7cbjAXqS9TUT')}
+              >
+                Copier
+              </button>
+            </div>
           </div>
-        </div>
-
-        <p className="mt-10 text-center">
-          Après votre don, <Link href="/confirmation" className="text-indigo-400 underline">remplissez ce formulaire</Link> pour recevoir le guide PDF.
-        </p>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 }
