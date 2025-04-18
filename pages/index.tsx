@@ -33,9 +33,10 @@ export default function Home() {
             Contribuez en BTC, ETH ou SOL et obtenez un guide exclusif :
           </p>
 
-          <div className="mt-2 inline-block px-4 py-2 bg-purple-700/20 text-purple-300 text-base md:text-lg font-semibold rounded-lg shadow-inner">
-            “Comment ne plus jamais perdre de l'argent en crypto”
-          </div>
+          <span className="relative inline-block text-indigo-300 font-semibold text-lg md:text-xl">
+            <span className="z-10 relative">“Comment ne plus jamais perdre de l'argent en crypto”</span>
+            <span className="absolute left-0 bottom-0 w-full h-1 bg-indigo-500/40 blur-md rounded"></span>
+          </span>
 
           <div className="mt-10">
             <Link
