@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <>
-      {/* Fond 3D */}
+      {/* Fond */}
       <div
         style={{
           position: 'fixed',
@@ -26,24 +27,37 @@ export default function Home() {
           </ul>
         </nav>
 
-        {/* Titre principal avec dégradé */}
+        {/* Sélecteur de langue */}
+        <div className="absolute top-6 right-6 flex gap-3">
+          <Link href="/">
+            <Image src="/flags/fr.png" alt="Français" width={24} height={16} />
+          </Link>
+          <Link href="/en">
+            <Image src="/flags/gb.png" alt="English" width={24} height={16} />
+          </Link>
+          <Link href="/de">
+            <Image src="/flags/de.png" alt="Deutsch" width={24} height={16} />
+          </Link>
+          <Link href="/es">
+            <Image src="/flags/es.png" alt="Español" width={24} height={16} />
+          </Link>
+        </div>
+
+        {/* Titre */}
         <section className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
             FAITES UN DON CRYPTO ET RECEVEZ UN GUIDE EXCLUSIF
           </h1>
 
-          {/* Texte explicatif */}
           <p className="text-lg text-gray-300 mb-4">
             Contribuez en BTC, ETH ou SOL et obtenez un guide exclusif :
           </p>
 
-          {/* Titre du guide mis en avant */}
           <span className="relative inline-block text-indigo-300 font-semibold text-lg md:text-xl mb-4">
             <span className="z-10 relative">“Comment ne plus jamais perdre de l'argent en crypto”</span>
             <span className="absolute left-0 bottom-0 w-full h-1 bg-indigo-500/40 blur-md rounded"></span>
           </span>
 
-          {/* Bouton */}
           <div className="mt-10">
             <Link
               href="/don"
@@ -54,7 +68,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Logos crypto */}
+        {/* Logos */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20 max-w-5xl mx-auto">
           {[
             { name: 'Bitcoin', image: '/bitcoin.png' },
@@ -75,7 +89,6 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Texte vers confirmation — tout en bas */}
         <div className="text-center mt-12">
           <p className="text-sm text-gray-400">
             Une fois votre don effectué, pensez à remplir le formulaire dans la section <Link href="/confirmation" className="underline text-indigo-300">Confirmation</Link>.
