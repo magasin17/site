@@ -26,13 +26,13 @@ export default function Home() {
           </ul>
         </nav>
 
-        {/* Titre principal */}
+        {/* Titre principal avec dégradé */}
         <section className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
             FAITES UN DON CRYPTO ET RECEVEZ UN GUIDE EXCLUSIF
           </h1>
 
-          {/* Texte d'intro */}
+          {/* Texte explicatif */}
           <p className="text-lg text-gray-300 mb-4">
             Contribuez en BTC, ETH ou SOL et obtenez un guide exclusif :
           </p>
