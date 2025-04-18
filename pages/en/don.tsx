@@ -1,3 +1,3 @@
 export default function Don() {
-  return <div>Donation page in English</div>;
+  return <div className="text-white p-10">Donation page in English</div>;
 }

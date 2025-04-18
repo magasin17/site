@@ -1,3 +1,3 @@
 export default function Confirmation() {
-  return <div>Confirmation page in English</div>;
+  return <div className="text-white p-10">Confirmation page in English</div>;
 }
