@@ -54,7 +54,7 @@ export default function Home() {
           </p>
 
           <span className="relative inline-block text-indigo-300 font-semibold text-lg md:text-xl mb-4">
-            <span className="z-10 relative">“Comment ne plus jamais perdre de l'argent en crypto”</span>
+            <span className="z-10 relative">“Avec ce nouveau guide en main, vous ne perdrez plus jamais d'argent en crypto”</span>
             <span className="absolute left-0 bottom-0 w-full h-1 bg-indigo-500/40 blur-md rounded"></span>
           </span>
 
