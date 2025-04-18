@@ -4,4 +4,10 @@
 
 body {
   overflow-x: hidden;
+  background: linear-gradient(to bottom right, #0f051d, #1b0f33);
+  background-image: url('/bg-lines.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Inter', sans-serif;
 }
