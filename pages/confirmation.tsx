@@ -49,6 +49,12 @@ export default function Confirmation() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <input
+                type="text"
+                placeholder="Votre nom"
+                className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
+                required
+              />
+              <input
                 type="email"
                 placeholder="Votre adresse email"
                 className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
@@ -69,10 +75,10 @@ export default function Confirmation() {
             </form>
           )}
 
-          {/* Texte informatif en bas */}
+          {/* Texte informatif complet */}
           <p className="mt-8 text-sm text-gray-400">
-            Une fois votre confirmation validée, vous recevrez le guide à l'adresse mail spécifiée.<br />
-            Si vous ne le recevez pas, vérifiez vos spams ou recommencez le formulaire.
+            Une fois votre confirmation validée, vous recevrez le guide sur le mail spécifié.<br />
+            Si vous n'avez pas reçu votre mail, vérifiez vos spams et réitérez le formulaire de confirmation.
           </p>
         </section>
       </main>
