@@ -68,10 +68,13 @@ export default function Don() {
                 <div className="bg-gray-900 rounded-lg p-3">
                   <code className={`text-sm break-all ${crypto.color}`}>{crypto.address}</code>
                   <button
-                    className="block mt-2 text-sm text-indigo-400 hover:text-indigo-200"
                     onClick={() => navigator.clipboard.writeText(crypto.address)}
+                    className="mt-2 text-indigo-400 hover:text-indigo-200"
+                    aria-label="Copier l'adresse"
                   >
-                    Copier
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mx-auto" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zM20 5H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h12v16z"/>
+                    </svg>
                   </button>
                 </div>
               </div>
