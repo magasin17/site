@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-black via-indigo-900 to-purple-900 text-white p-8 overflow-x-hidden">
+    <main className="min-h-screen text-white p-8 overflow-x-hidden">
       <nav className="flex justify-between items-center mb-12 flex-wrap">
-        <div className="text-xl font-semibold">cryptolooser.com</div>
+        <div className="text-xl font-bold">cryptolooser.com</div>
         <ul className="flex flex-wrap gap-6 text-sm mt-4 sm:mt-0">
           <li><Link href="/don">Donate</Link></li>
           <li><Link href="/confirmation">Confirmation</Link></li>
@@ -24,18 +24,23 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16">
-        <div className="bg-gray-900 p-6 rounded-2xl flex flex-col items-center shadow-lg">
-          <img src="/bitcoin.png" alt="Bitcoin" className="w-16 h-16 mb-4" />
-          <h3 className="text-lg font-semibold">Bitcoin</h3>
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20 max-w-5xl mx-auto">
+        {/* Bitcoin */}
+        <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 text-center shadow-2xl border border-white/10">
+          <img src="/bitcoin.png" alt="Bitcoin" className="w-20 h-20 mx-auto mb-4" />
+          <h3 className="text-xl font-semibold">Bitcoin</h3>
         </div>
-        <div className="bg-gray-900 p-6 rounded-2xl flex flex-col items-center shadow-lg">
-          <img src="/ethereum.png" alt="Ethereum" className="w-16 h-16 mb-4" />
-          <h3 className="text-lg font-semibold">Ethereum</h3>
+
+        {/* Ethereum */}
+        <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 text-center shadow-2xl border border-white/10">
+          <img src="/ethereum.png" alt="Ethereum" className="w-20 h-20 mx-auto mb-4" />
+          <h3 className="text-xl font-semibold">Ethereum</h3>
         </div>
-        <div className="bg-gray-900 p-6 rounded-2xl flex flex-col items-center shadow-lg">
-          <img src="/solana.png" alt="Solana" className="w-16 h-16 mb-4" />
-          <h3 className="text-lg font-semibold">Solana</h3>
+
+        {/* Solana */}
+        <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 text-center shadow-2xl border border-white/10">
+          <img src="/solana.png" alt="Solana" className="w-20 h-20 mx-auto mb-4" />
+          <h3 className="text-xl font-semibold">Solana</h3>
         </div>
       </section>
     </main>
