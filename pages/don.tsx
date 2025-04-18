@@ -3,6 +3,7 @@ import Link from 'next/link';
 export default function Don() {
   return (
     <>
+      {/* Fond de page */}
       <div
         style={{
           position: 'fixed',
@@ -17,10 +18,21 @@ export default function Don() {
 
       <main className="relative min-h-screen text-white px-6 py-16 overflow-x-hidden">
         <section className="max-w-5xl mx-auto text-center">
-          <Link href="/" className="text-indigo-400 underline mb-6 block text-sm">← Retour à l’accueil</Link>
-          
-          <h1 className="text-4xl font-extrabold mb-6 bg-gradient-to-r from-purple-500 to-indigo-400 text-transparent bg-clip-text tracking-wide drop-shadow-xl">
+          {/* Lien retour en version plus pro */}
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm text-indigo-400 hover:text-white transition mb-6"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Retour à l’accueil
+          </Link>
+
+          {/* Titre amélioré */}
+          <h1 className="text-4xl font-extrabold mb-8 bg-gradient-to-r from-fuchsia-500 to-indigo-500 text-transparent bg-clip-text tracking-wider drop-shadow-2xl relative inline-block">
             Faire un don
+            <span className="block h-1 mt-1 bg-indigo-500/50 blur-sm rounded-full w-1/2 mx-auto"></span>
           </h1>
 
           <p className="text-gray-300 mb-2">
