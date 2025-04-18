@@ -2,50 +2,52 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen text-white p-8 overflow-x-hidden">
-      <nav className="flex justify-between items-center mb-12 flex-wrap">
-        <div className="text-xl font-bold">cryptolooser.com</div>
-        <ul className="flex flex-wrap gap-6 text-sm mt-4 sm:mt-0">
-          <li><Link href="/don">Donate</Link></li>
-          <li><Link href="/confirmation">Confirmation</Link></li>
-        </ul>
-      </nav>
+    <>
+      {/* Fond 3D derrière tout */}
+      <div id="background" />
 
-      <section className="text-center max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-          FAITES UN DON CRYPTO ET RECEVEZ UN GUIDE EXCLUSIF
-        </h1>
-        <p className="text-lg text-gray-300 mb-8">
-          Contribuez en BTC, ETH ou SOL et obtenez un guide exclusif :<br />
-          <span className="italic">"Comment ne plus jamais perdre de l'argent en crypto"</span>
-        </p>
-        <Link
-          href="/don"
-          className="inline-block bg-indigo-600 hover:bg-indigo-700 px-8 py-3 rounded-2xl text-white font-semibold transition"
-        >
-          FAIRE UN DON
-        </Link>
-      </section>
+      <main className="relative min-h-screen flex flex-col px-6 py-12">
+        {/* Nav */}
+        <nav className="flex justify-between items-center mb-12">
+          <div className="text-2xl font-bold">cryptolooser.com</div>
+          <ul className="flex gap-8 text-sm">
+            <li><Link href="/don">Donate</Link></li>
+            <li><Link href="/confirmation">Confirmation</Link></li>
+          </ul>
+        </nav>
 
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20 max-w-5xl mx-auto">
-        {/* Bitcoin */}
-        <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 text-center shadow-2xl border border-white/10">
-          <img src="/bitcoin.png" alt="Bitcoin" className="w-20 h-20 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold">Bitcoin</h3>
-        </div>
+        {/* Héros */}
+        <section className="text-center max-w-3xl mx-auto mb-20">
+          <h1 className="text-5xl font-bold leading-tight mb-6 text-gray-100">
+            FAITES UN DON CRYPTO ET RECEVEZ UN GUIDE EXCLUSIF
+          </h1>
+          <p className="text-lg text-gray-300 mb-8">
+            Contribuez en BTC, ETH ou SOL et obtenez un guide exclusif :<br/>
+            <span className="italic">"Comment ne plus jamais perdre de l'argent en crypto"</span>
+          </p>
+          <Link
+            href="/don"
+            className="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 
+                       px-10 py-4 rounded-full text-lg font-semibold text-white shadow-lg transition"
+          >
+            FAIRE UN DON
+          </Link>
+        </section>
 
-        {/* Ethereum */}
-        <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 text-center shadow-2xl border border-white/10">
-          <img src="/ethereum.png" alt="Ethereum" className="w-20 h-20 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold">Ethereum</h3>
-        </div>
-
-        {/* Solana */}
-        <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 text-center shadow-2xl border border-white/10">
-          <img src="/solana.png" alt="Solana" className="w-20 h-20 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold">Solana</h3>
-        </div>
-      </section>
-    </main>
-);
+        {/* Cartes crypto */}
+        <section className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {['bitcoin','ethereum','solana'].map((coin) => (
+            <div
+              key={coin}
+              className="backdrop-glass border border-white/10 rounded-2xl p-8 flex flex-col items-center 
+                         shadow-2xl transform hover:scale-105 transition"
+            >
+              <img src={`/${coin}.png`} alt={coin} className="w-24 h-24 mb-4" />
+              <h3 className="text-2xl font-semibold capitalize">{coin}</h3>
+            </div>
+          ))}
+        </section>
+      </main>
+    </>
+  );
 }
