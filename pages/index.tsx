@@ -19,7 +19,10 @@ export default function Home() {
           Contribuez en BTC, ETH ou SOL et obtenez un guide exclusif :<br />
           <span className="italic">"Comment ne plus jamais perdre de l'argent en crypto"</span>
         </p>
-        <Link href="/don" className="inline-block bg-indigo-600 hover:bg-indigo-700 px-8 py-3 rounded-2xl text-white font-semibold transition">
+        <Link
+          href="/don"
+          className="inline-block bg-indigo-600 hover:bg-indigo-700 px-8 py-3 rounded-2xl text-white font-semibold transition"
+        >
           FAIRE UN DON
         </Link>
       </section>
@@ -44,5 +47,5 @@ export default function Home() {
         </div>
       </section>
     </main>
-  );
+);
 }
