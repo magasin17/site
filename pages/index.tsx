@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      {/* Fond 3D fixe derrière tout */}
+      {/* Fond de page */}
       <div
         style={{
           position: 'fixed',
@@ -17,7 +17,6 @@ export default function Home() {
       />
 
       <main className="min-h-screen text-white px-6 py-10">
-        {/* Barre de navigation */}
         <nav className="flex justify-between items-center mb-12 flex-wrap">
           <div className="text-2xl font-bold">cryptolooser.com</div>
           <ul className="flex gap-6 text-sm">
@@ -26,7 +25,6 @@ export default function Home() {
           </ul>
         </nav>
 
-        {/* En-tête principale */}
         <section className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
             FAITES UN DON CRYPTO ET RECEVEZ UN GUIDE EXCLUSIF
@@ -41,19 +39,10 @@ export default function Home() {
           >
             FAIRE UN DON
           </Link>
-        </section>
 
-        {/* Cartes crypto modernes */}
-        <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto">
-          {['bitcoin', 'ethereum', 'solana'].map((coin) => (
-            <div
-              key={coin}
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center shadow-2xl hover:scale-105 transition-transform"
-            >
-              <img src={`/${coin}.png`} alt={coin} className="w-24 h-24 object-contain mx-auto mb-4" />
-              <h3 className="text-xl font-semibold capitalize">{coin}</h3>
-            </div>
-          ))}
+          <p className="mt-4 text-sm text-gray-400">
+            Une fois votre don effectué, pensez à remplir le formulaire dans la section <Link href="/confirmation" className="underline text-indigo-300">Confirmation</Link>.
+          </p>
         </section>
       </main>
     </>
