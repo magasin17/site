@@ -3,7 +3,6 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      {/* Fond 3D */}
       <div
         style={{
           position: 'fixed',
@@ -17,7 +16,6 @@ export default function Home() {
       />
 
       <main className="min-h-screen text-white px-6 py-10">
-        {/* Navigation */}
         <nav className="flex justify-between items-center mb-12 flex-wrap">
           <div className="text-2xl font-bold">cryptolooser.com</div>
           <ul className="flex gap-6 text-sm">
@@ -26,26 +24,29 @@ export default function Home() {
           </ul>
         </nav>
 
-        {/* Titre + bouton */}
         <section className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
             FAITES UN DON CRYPTO ET RECEVEZ UN GUIDE EXCLUSIF
           </h1>
-          <p className="text-lg text-gray-300 mb-8">
-            Contribuez en BTC, ETH ou SOL et obtenez un guide exclusif :<br />
-            <div className="mt-4 inline-block px-4 py-2 bg-purple-700/20 text-purple-300 text-base md:text-lg font-semibold rounded-lg shadow-inner">
-  “Comment ne plus jamais perdre de l'argent en crypto”
-</div>
 
-          <Link
-            href="/don"
-            className="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 px-8 py-3 rounded-full text-white font-semibold shadow-xl transition"
-          >
-            FAIRE UN DON
-          </Link>
+          <p className="text-lg text-gray-300 mb-4">
+            Contribuez en BTC, ETH ou SOL et obtenez un guide exclusif :
+          </p>
+
+          <div className="mt-2 inline-block px-4 py-2 bg-purple-700/20 text-purple-300 text-base md:text-lg font-semibold rounded-lg shadow-inner">
+            “Comment ne plus jamais perdre de l'argent en crypto”
+          </div>
+
+          <div className="mt-10">
+            <Link
+              href="/don"
+              className="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 px-8 py-3 rounded-full text-white font-semibold shadow-xl transition"
+            >
+              FAIRE UN DON
+            </Link>
+          </div>
         </section>
 
-        {/* Encarts crypto */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20 max-w-5xl mx-auto">
           {['bitcoin', 'ethereum', 'solana'].map((coin) => (
             <div
@@ -58,7 +59,6 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Texte de confirmation tout en bas */}
         <div className="text-center mt-12">
           <p className="text-sm text-gray-400">
             Une fois votre don effectué, pensez à remplir le formulaire dans la section <Link href="/confirmation" className="underline text-indigo-300">Confirmation</Link>.
