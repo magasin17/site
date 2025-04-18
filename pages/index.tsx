@@ -3,6 +3,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
+      {/* Fond dynamique */}
       <div
         style={{
           position: 'fixed',
@@ -15,55 +16,53 @@ export default function Home() {
         }}
       />
 
-      <main className="min-h-screen text-white px-6 py-10">
-        <nav className="flex justify-between items-center mb-12 flex-wrap">
-          <div className="text-2xl font-bold">cryptolost.net</div>
-          <ul className="flex gap-6 text-sm">
-            <li><Link href="/don">Donate</Link></li>
-            <li><Link href="/confirmation">Confirmation</Link></li>
-          </ul>
-        </nav>
-
-        <section className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-            FAITES UN DON CRYPTO ET RECEVEZ UN GUIDE EXCLUSIF
-          </h1>
-
-          <p className="text-lg text-gray-300 mb-4">
-            Contribuez en BTC, ETH ou SOL et obtenez un guide exclusif :
-          </p>
-
-          <span className="relative inline-block text-indigo-300 font-semibold text-lg md:text-xl">
-            <span className="z-10 relative">“Comment ne plus jamais perdre de l'argent en crypto”</span>
-            <span className="absolute left-0 bottom-0 w-full h-1 bg-indigo-500/40 blur-md rounded"></span>
+      <main className="min-h-screen text-white px-6 py-16 flex flex-col items-center text-center">
+        {/* Titre en 3 lignes avec gradient */}
+        <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-wide mb-6">
+          <span className="block bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
+            FAIRE UN DON
           </span>
+          <span className="block bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
+            CRYPTO UN
+          </span>
+          <span className="block bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
+            GUIDE EXCLUSIF
+          </span>
+        </h1>
 
-          <div className="mt-10">
-            <Link
-              href="/don"
-              className="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 px-8 py-3 rounded-full text-white font-semibold shadow-xl transition"
-            >
-              FAIRE UN DON
-            </Link>
-          </div>
-        </section>
+        {/* Texte explicatif */}
+        <p className="text-gray-300 max-w-xl mb-6 text-base sm:text-lg">
+          Contribuez en BTC, ETH ou SOL et obtenez un guide exclusif :<br />
+          <span className="italic">“Comment ne plus jamais perdre d’argent en crypto.”</span>
+        </p>
 
-        <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20 max-w-5xl mx-auto">
-          {['bitcoin', 'ethereum', 'solana'].map((coin) => (
+        {/* Bouton */}
+        <Link
+          href="/don"
+          className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-semibold text-white shadow-lg transition mb-16"
+        >
+          FAIRE UN DON
+        </Link>
+
+        {/* Logos crypto */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          {[
+            { name: 'Bitcoin', image: '/bitcoin.png' },
+            { name: 'Ethereum', image: '/ethereum.png' },
+            { name: 'Solana', image: '/solana.png' },
+          ].map((coin) => (
             <div
-              key={coin}
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center shadow-2xl hover:scale-105 transition-transform"
+              key={coin.name}
+              className="flex flex-col items-center text-center bg-white/5 backdrop-blur-md p-6 rounded-2xl shadow-xl"
             >
-              <img src={`/${coin}.png`} alt={coin} className="w-24 h-24 object-contain mx-auto mb-4" />
-              <h3 className="text-xl font-semibold capitalize">{coin}</h3>
+              <img
+                src={coin.image}
+                alt={coin.name}
+                className="w-20 h-20 object-contain mb-4"
+              />
+              <h3 className="text-lg font-semibold text-white">{coin.name}</h3>
             </div>
           ))}
-        </section>
-
-        <div className="text-center mt-12">
-          <p className="text-sm text-gray-400">
-            Une fois votre don effectué, pensez à remplir le formulaire dans la section <Link href="/confirmation" className="underline text-indigo-300">Confirmation</Link>.
-          </p>
         </div>
       </main>
     </>
