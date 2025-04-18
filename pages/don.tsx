@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Don() {
   return (
     <>
-      {/* Fond de page comme sur la page d'accueil */}
+      {/* Fond de page */}
       <div
         style={{
           position: 'fixed',
@@ -20,13 +20,14 @@ export default function Don() {
         <section className="max-w-2xl w-full text-center">
           <Link href="/" className="text-indigo-400 underline mb-6 block text-sm">← Retour à l’accueil</Link>
           <h1 className="text-3xl font-bold mb-6 drop-shadow-lg">Faire un don</h1>
-          <p className="mb-8 text-gray-300">Vous pouvez contribuer via l'une des adresses suivantes :</p>
+          <p className="mb-8 text-gray-300">Contribuez via l'une des adresses suivantes :</p>
 
           {/* Bitcoin */}
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 mb-6 shadow-xl">
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 mb-6 shadow-xl">
+            <img src="/bitcoin.png" alt="Bitcoin" className="w-16 h-16 mx-auto mb-4" />
             <h2 className="text-xl font-semibold mb-2">Bitcoin</h2>
             <div className="flex items-center justify-between bg-gray-900 rounded-lg p-3">
-              <code className="text-sm break-all">bc1qt3cgs7ajd2x65cmjr9u66663krt89ha5xhsj9c</code>
+              <code className="text-sm break-all text-yellow-400">bc1qt3cgs7ajd2x65cmjr9u66663krt89ha5xhsj9c</code>
               <button
                 className="ml-4 text-sm text-indigo-400 hover:text-indigo-200"
                 onClick={() => navigator.clipboard.writeText('bc1qt3cgs7ajd2x65cmjr9u66663krt89ha5xhsj9c')}
@@ -37,10 +38,11 @@ export default function Don() {
           </div>
 
           {/* Ethereum */}
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 mb-6 shadow-xl">
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 mb-6 shadow-xl">
+            <img src="/ethereum.png" alt="Ethereum" className="w-16 h-16 mx-auto mb-4" />
             <h2 className="text-xl font-semibold mb-2">Ethereum</h2>
             <div className="flex items-center justify-between bg-gray-900 rounded-lg p-3">
-              <code className="text-sm break-all">0x6D3EE24FF55A46f89883043fF810B38F04Bf3485</code>
+              <code className="text-sm break-all text-purple-400">0x6D3EE24FF55A46f89883043fF810B38F04Bf3485</code>
               <button
                 className="ml-4 text-sm text-indigo-400 hover:text-indigo-200"
                 onClick={() => navigator.clipboard.writeText('0x6D3EE24FF55A46f89883043fF810B38F04Bf3485')}
@@ -51,10 +53,11 @@ export default function Don() {
           </div>
 
           {/* Solana */}
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 mb-6 shadow-xl">
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 mb-6 shadow-xl">
+            <img src="/solana.png" alt="Solana" className="w-16 h-16 mx-auto mb-4" />
             <h2 className="text-xl font-semibold mb-2">Solana</h2>
             <div className="flex items-center justify-between bg-gray-900 rounded-lg p-3">
-              <code className="text-sm break-all">42G1XK8Lz6c9vx5SzxEPg8WR2D3YEtPV7cbjAXqS9TUT</code>
+              <code className="text-sm break-all text-green-400">42G1XK8Lz6c9vx5SzxEPg8WR2D3YEtPV7cbjAXqS9TUT</code>
               <button
                 className="ml-4 text-sm text-indigo-400 hover:text-indigo-200"
                 onClick={() => navigator.clipboard.writeText('42G1XK8Lz6c9vx5SzxEPg8WR2D3YEtPV7cbjAXqS9TUT')}
