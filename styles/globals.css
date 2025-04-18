@@ -2,12 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  overflow-x: hidden;
-  background: linear-gradient(to bottom right, #0f051d, #1b0f33);
+/* Fond 3D + lignes violettes */
+#background {
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: linear-gradient(to bottom right, #0a0414, #1c0b2f);
   background-image: url('/bg-lines.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  z-index: -10;
+}
+
+/* Pour que le blur fonctionne dans les cartes */
+.backdrop-glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+}
+
+/* Texte général un peu plus doux */
+body {
   font-family: 'Inter', sans-serif;
+  color: #ececec;
+  overflow-x: hidden;
 }
