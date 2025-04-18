@@ -1,14 +1,6 @@
-import { useState } from 'react';
 import Link from 'next/link';
 
 export default function Confirmation() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <>
       {/* Fond 3D */}
@@ -27,7 +19,7 @@ export default function Confirmation() {
       <main className="min-h-screen text-white px-6 py-16 overflow-x-hidden">
         <section className="max-w-xl mx-auto text-center">
 
-          {/* Bouton retour stylé avec espacement */}
+          {/* Bouton retour stylé */}
           <div className="mb-8">
             <Link
               href="/"
@@ -42,40 +34,40 @@ export default function Confirmation() {
 
           <h1 className="text-3xl font-bold mb-6">Confirmation de Don</h1>
 
-          {submitted ? (
-            <p className="text-green-400 font-medium">
-              Merci ! Votre demande de confirmation a été envoyée.
-            </p>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <input
-                type="text"
-                placeholder="Votre nom"
-                className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Votre adresse email"
-                className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
-                required
-              />
-              <textarea
-                placeholder="Adresse de transaction / hash / commentaire"
-                className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
-                rows={4}
-                required
-              />
-              <button
-                type="submit"
-                className="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full text-white font-semibold shadow transition"
-              >
-                Envoyer
-              </button>
-            </form>
-          )}
+          <form
+            action="https://formspree.io/f/xeoabrky"
+            method="POST"
+            className="space-y-6"
+          >
+            <input
+              type="text"
+              name="Nom"
+              placeholder="Votre nom"
+              className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
+              required
+            />
+            <input
+              type="email"
+              name="Email"
+              placeholder="Votre adresse email"
+              className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
+              required
+            />
+            <textarea
+              name="Message"
+              placeholder="Adresse de transaction / hash / commentaire"
+              className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
+              rows={4}
+              required
+            />
+            <button
+              type="submit"
+              className="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full text-white font-semibold shadow transition"
+            >
+              Envoyer
+            </button>
+          </form>
 
-          {/* Texte informatif complet (corrigé) */}
           <p className="mt-8 text-sm text-gray-400">
             Une fois votre confirmation validée, vous recevrez votre guide par e-mail. Si vous ne le trouvez pas dans votre boîte de réception, pensez à vérifier vos spams. Vous pouvez également remplir à nouveau ce formulaire si nécessaire.
           </p>
