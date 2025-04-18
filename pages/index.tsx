@@ -17,7 +17,7 @@ export default function Home() {
 
       <main className="min-h-screen text-white px-6 py-10">
         <nav className="flex justify-between items-center mb-12 flex-wrap">
-          <div className="text-2xl font-bold">cryptolooser.com</div>
+          <div className="text-2xl font-bold">cryptolost.net</div>
           <ul className="flex gap-6 text-sm">
             <li><Link href="/don">Donate</Link></li>
             <li><Link href="/confirmation">Confirmation</Link></li>
