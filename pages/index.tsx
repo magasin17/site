@@ -26,19 +26,16 @@ export default function Home() {
           </ul>
         </nav>
 
-        {/* Titre principal en 3 lignes */}
+        {/* Titre principal */}
         <section className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-            <span className="block bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
-              FAIRE UN DON
-            </span>
-            <span className="block bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
-              CRYPTO UN
-            </span>
-            <span className="block bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
-              GUIDE EXCLUSIF
-            </span>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            FAITES UN DON CRYPTO ET RECEVEZ UN GUIDE EXCLUSIF
           </h1>
+
+          {/* Texte d'intro */}
+          <p className="text-lg text-gray-300 mb-4">
+            Contribuez en BTC, ETH ou SOL et obtenez un guide exclusif :
+          </p>
 
           {/* Titre du guide mis en avant */}
           <span className="relative inline-block text-indigo-300 font-semibold text-lg md:text-xl mb-4">
@@ -78,7 +75,7 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Lien vers confirmation */}
+        {/* Texte vers confirmation — tout en bas */}
         <div className="text-center mt-12">
           <p className="text-sm text-gray-400">
             Une fois votre don effectué, pensez à remplir le formulaire dans la section <Link href="/confirmation" className="underline text-indigo-300">Confirmation</Link>.
