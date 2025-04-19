@@ -1,18 +1,11 @@
-import { useState } from 'react';
 import Link from 'next/link';
 
 export default function Confirmation() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <>
+      {/* Fondo 3D */}
       <div
-        style={
+        style={{
           position: 'fixed',
           top: 0,
           left: 0,
@@ -20,35 +13,65 @@ export default function Confirmation() {
           height: '100%',
           background: "url('/hero-bg.jpg') center/cover no-repeat",
           zIndex: -10,
-        }
+        }}
       />
-      <main className="min-h-screen text-white px-6 py-10">
-        <Link href="/es" className="inline-block p-3 mb-6 bg-white/10 hover:bg-white/20 rounded-full">
-          <span className="text-lg">←</span>
-        </Link>
 
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-10 text-center bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
-          CONFIRMACIÓN
-        </h1>
+      <main className="min-h-screen text-white px-6 py-16 overflow-x-hidden">
+        <section className="max-w-xl mx-auto text-center">
 
-        <form
-          onSubmit={handleSubmit}
-          action="https://formspree.io/f/xeoabrky"
-          method="POST"
-          className="max-w-2xl mx-auto space-y-4"
-        >
-          <input type="text" name="name" placeholder="Nombre" required className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none" />
-          <input type="email" name="email" placeholder="Correo" required className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none" />
-          <textarea name="message" placeholder="Mensaje" rows=4 className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none" />
-          <button type="submit" className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded transition">
-            Enviar
-          </button>
-          {submitted && <p className="text-green-400">CONFIRMACIÓN sent successfully!</p>}
-        </form>
+          {/* Botón de regreso */}
+          <div className="mb-8">
+            <Link
+              href="/es"
+              className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 transition"
+              aria-label="Volver"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </Link>
+          </div>
 
-        <div className="text-center mt-12 text-sm text-gray-400">
-          <p>Una vez validada tu confirmación, recibirás la guía por correo electrónico. Si no lo encuentras en tu bandeja de entrada, revisa tu carpeta de spam o vuelve a enviar el formulario.</p>
-        </div>
+          <h1 className="text-3xl font-bold mb-6">Confirmación de Donación</h1>
+
+          <form
+            action="https://formspree.io/f/xeoabrky"
+            method="POST"
+            className="space-y-6"
+          >
+            <input
+              type="text"
+              name="Nombre"
+              placeholder="Tu nombre"
+              className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
+              required
+            />
+            <input
+              type="email"
+              name="Correo electrónico"
+              placeholder="Tu correo electrónico"
+              className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
+              required
+            />
+            <textarea
+              name="Mensaje"
+              placeholder="Dirección de transacción / hash / comentario"
+              className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
+              rows={4}
+              required
+            />
+            <button
+              type="submit"
+              className="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full text-white font-semibold shadow transition"
+            >
+              Enviar
+            </button>
+          </form>
+
+          <p className="mt-8 text-sm text-gray-400">
+            Una vez validada tu confirmación, recibirás tu guía por correo electrónico. Si no lo encuentras en tu bandeja de entrada, revisa la carpeta de spam. También puedes completar nuevamente este formulario si es necesario.
+          </p>
+        </section>
       </main>
     </>
   );
