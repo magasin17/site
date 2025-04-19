@@ -42,7 +42,7 @@ export default function Confirmation() {
         <textarea
           name="message"
           placeholder="Message"
-          rows="4"
+          rows={4}
           className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none"
         />
         <button
@@ -57,9 +57,7 @@ export default function Confirmation() {
       </form>
       <div className="text-center mt-10 text-sm text-gray-400">
         <p>
-          Once your confirmation is validated, you will receive your guide by
-          email. If you do not see it in your inbox, please check your spam
-          folder or fill out this form again.
+          Once your confirmation is validated, you will receive the guide by email. If you don’t see it in your inbox, check your spam folder. You can also submit this form again if needed.
         </p>
       </div>
     </main>
