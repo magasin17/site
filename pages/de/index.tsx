@@ -19,26 +19,38 @@ export default function Home() {
       <main className="min-h-screen text-white px-6 py-10">
         <nav className="flex justify-between items-center mb-12 flex-wrap">
           <div className="text-2xl font-bold">cryptolost.net</div>
-          <ul className="flex gap-6 text-sm items-center">
+          <ul className="flex gap-6 text-sm">
             <li><Link href="/de/don">Spenden</Link></li>
             <li><Link href="/de/confirmation">Bestätigung</Link></li>
-            <li className="flex gap-2 items-center">
-              <Link href="/"><Image src="/fr.png" alt="FR" width={24} height={16} /></Link>
-              <Link href="/en"><Image src="/en.png" alt="EN" width={24} height={16} /></Link>
-              <Link href="/es"><Image src="/es.png" alt="ES" width={24} height={16} /></Link>
-            </li>
           </ul>
         </nav>
 
+        <div className="absolute top-6 right-6 flex gap-3">
+          <Link href="/">
+            <Image src="/flags/fr.png" alt="Français" width={24} height={16} />
+          </Link>
+          <Link href="/en">
+            <Image src="/flags/gb.png" alt="English" width={24} height={16} />
+          </Link>
+          <Link href="/de">
+            <Image src="/flags/de.png" alt="Deutsch" width={24} height={16} />
+          </Link>
+          <Link href="/es">
+            <Image src="/flags/es.png" alt="Español" width={24} height={16} />
+          </Link>
+        </div>
+
         <section className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
-            SPENDEN SIE IN KRYPTOWÄHRUNG UND ERHALTEN SIE EINEN EXKLUSIVEN LEITFADEN
+            SPENDEN SIE IN KRYPTOS UND ERHALTEN SIE EIN EXKLUSIVES GUIDE
           </h1>
+
           <p className="text-lg text-gray-300 mb-4">
-            Spenden Sie in BTC, ETH oder SOL und erhalten Sie diesen exklusiven Leitfaden:
+            Spenden Sie in BTC, ETH oder SOL und erhalten Sie einen exklusiven Guide:
           </p>
+
           <span className="relative inline-block text-indigo-300 font-semibold text-lg md:text-xl mb-4">
-            <span className="z-10 relative">„Wie man nie wieder Geld mit Krypto verliert“</span>
+            <span className="z-10 relative">„Mit diesem neuen Guide werden Sie nie wieder Geld mit Krypto verlieren“</span>
             <span className="absolute left-0 bottom-0 w-full h-1 bg-indigo-500/40 blur-md rounded"></span>
           </span>
 
