@@ -10,53 +10,36 @@ export default function Confirmation() {
   };
 
   return (
-    <main className="min-h-screen px-6 py-10 text-white bg-black">
-      <Link href="/de" className="inline-block mb-8">
-        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition">
-          ←
-        </div>
-      </Link>
-
-      <h1 className="text-3xl font-bold mb-8">Bestätigungsformular</h1>
-
-      <form
-        onSubmit={handleSubmit}
-        action="https://formspree.io/f/xeoabrky"
-        method="POST"
-        className="max-w-xl mx-auto space-y-4"
-      >
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          required
-          className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="E-Mail"
-          required
-          className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none"
-        />
-        <textarea
-          name="message"
-          placeholder="Nachricht"
-          rows={4}
-          className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none"
-        />
-        <button
-          type="submit"
-          className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded transition"
-        >
-          Senden
-        </button>
-        {submitted && <p className="text-green-400">Bestätigung erfolgreich gesendet!</p>}
-      </form>
-
-      <div className="text-center mt-12 text-sm text-gray-400 max-w-xl mx-auto">
-        Sobald Ihre Bestätigung eingegangen ist, erhalten Sie Ihr Handbuch per E-Mail. Wenn Sie es nicht im Posteingang finden, überprüfen Sie Ihren Spam-Ordner oder füllen Sie das Formular erneut aus.
+    <>
+      {/* Back Button */}
+      <div className="px-6 pt-6">
+        <Link href="/de" className="inline-flex items-center justify-center w-10 h-10 bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition">
+          <span className="text-xl">←</span>
+        </Link>
       </div>
-    </main>
+
+      <main className="min-h-screen px-6 py-10 text-white">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
+          SPENDE BESTÄTIGEN
+        </h1>
+
+        <form
+          action="https://formspree.io/f/xeoabrky"
+          method="POST"
+          onSubmit={handleSubmit}
+          className="max-w-xl mx-auto space-y-4"
+        >
+          <input type="text" name="name" placeholder="Name" required className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none" />
+          <input type="email" name="email" placeholder="Email" required className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none" />
+          <textarea name="message" placeholder="Nachricht" rows={4} className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none" />
+          <button type="submit" className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded transition">Senden</button>
+          {submitted && <p className="text-green-400">Bestätigung erfolgreich gesendet!</p>}
+        </form>
+
+        <div className="text-center mt-10 text-sm text-gray-400 max-w-lg mx-auto">
+          Nach erfolgreicher Bestätigung erhalten Sie Ihren Guide per E-Mail. Überprüfen Sie bitte Ihren Spam-Ordner, falls Sie keine Nachricht erhalten, oder füllen Sie das Formular erneut aus.
+        </div>
+      </main>
+    </>
   );
 }
