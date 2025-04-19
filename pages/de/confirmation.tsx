@@ -1,44 +1,77 @@
-import { useState } from 'react';
 import Link from 'next/link';
 
 export default function Confirmation() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <>
-      {/* Back Button */}
-      <div className="px-6 pt-6">
-        <Link href="/de" className="inline-flex items-center justify-center w-10 h-10 bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition">
-          <span className="text-xl">←</span>
-        </Link>
-      </div>
+      {/* 3D-Hintergrund */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: "url('/hero-bg.jpg') center/cover no-repeat",
+          zIndex: -10,
+        }}
+      />
 
-      <main className="min-h-screen px-6 py-10 text-white">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
-          SPENDE BESTÄTIGEN
-        </h1>
+      <main className="min-h-screen text-white px-6 py-16 overflow-x-hidden">
+        <section className="max-w-xl mx-auto text-center">
 
-        <form
-          action="https://formspree.io/f/xeoabrky"
-          method="POST"
-          onSubmit={handleSubmit}
-          className="max-w-xl mx-auto space-y-4"
-        >
-          <input type="text" name="name" placeholder="Name" required className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none" />
-          <input type="email" name="email" placeholder="Email" required className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none" />
-          <textarea name="message" placeholder="Nachricht" rows={4} className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none" />
-          <button type="submit" className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded transition">Senden</button>
-          {submitted && <p className="text-green-400">Bestätigung erfolgreich gesendet!</p>}
-        </form>
+          {/* Zurück-Button */}
+          <div className="mb-8">
+            <Link
+              href="/de"
+              className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 transition"
+              aria-label="Zurück"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </Link>
+          </div>
 
-        <div className="text-center mt-10 text-sm text-gray-400 max-w-lg mx-auto">
-          Nach erfolgreicher Bestätigung erhalten Sie Ihren Guide per E-Mail. Überprüfen Sie bitte Ihren Spam-Ordner, falls Sie keine Nachricht erhalten, oder füllen Sie das Formular erneut aus.
-        </div>
+          <h1 className="text-3xl font-bold mb-6">Spendenbestätigung</h1>
+
+          <form
+            action="https://formspree.io/f/xeoabrky"
+            method="POST"
+            className="space-y-6"
+          >
+            <input
+              type="text"
+              name="Name"
+              placeholder="Ihr Name"
+              className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
+              required
+            />
+            <input
+              type="email"
+              name="Email"
+              placeholder="Ihre E-Mail-Adresse"
+              className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
+              required
+            />
+            <textarea
+              name="Nachricht"
+              placeholder="Transaktionsadresse / Hash / Kommentar"
+              className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-white/10"
+              rows={4}
+              required
+            />
+            <button
+              type="submit"
+              className="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full text-white font-semibold shadow transition"
+            >
+              Senden
+            </button>
+          </form>
+
+          <p className="mt-8 text-sm text-gray-400">
+            Nach erfolgreicher Bestätigung erhalten Sie Ihren Leitfaden per E-Mail. Falls Sie ihn nicht im Posteingang finden, überprüfen Sie bitte auch Ihren Spam-Ordner. Sie können das Formular bei Bedarf erneut ausfüllen.
+          </p>
+        </section>
       </main>
     </>
   );
