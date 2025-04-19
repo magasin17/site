@@ -19,23 +19,28 @@ export default function Home() {
       <main className="min-h-screen text-white px-6 py-10">
         <nav className="flex justify-between items-center mb-12 flex-wrap">
           <div className="text-2xl font-bold">cryptolost.net</div>
-          <ul className="flex gap-6 text-sm">
+          <ul className="flex gap-6 text-sm items-center">
             <li><Link href="/es/don">Donación</Link></li>
             <li><Link href="/es/confirmation">Confirmación</Link></li>
+            <li>
+              <div className="flex gap-2">
+                <Link href="/"><Image src="/fr.png" alt="Français" width={24} height={16} /></Link>
+                <Link href="/en"><Image src="/en.png" alt="English" width={24} height={16} /></Link>
+                <Link href="/de"><Image src="/de.png" alt="Deutsch" width={24} height={16} /></Link>
+              </div>
+            </li>
           </ul>
         </nav>
 
         <section className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
-            HAZ UNA DONACIÓN CRIPTO Y RECIBE UNA GUÍA EXCLUSIVA
+            HAGA UNA DONACIÓN EN CRIPTO Y RECIBA UNA GUÍA EXCLUSIVA
           </h1>
-
           <p className="text-lg text-gray-300 mb-4">
-            Contribuye en BTC, ETH o SOL y recibe esta guía exclusiva:
+            Contribuya con BTC, ETH o SOL y obtenga esta guía exclusiva:
           </p>
-
           <span className="relative inline-block text-indigo-300 font-semibold text-lg md:text-xl mb-4">
-            <span className="z-10 relative">“Cómo no volver a perder dinero en criptomonedas”</span>
+            <span className="z-10 relative">“Cómo no volver a perder dinero en cripto”</span>
             <span className="absolute left-0 bottom-0 w-full h-1 bg-indigo-500/40 blur-md rounded"></span>
           </span>
 
@@ -44,7 +49,7 @@ export default function Home() {
               href="/es/don"
               className="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 px-8 py-3 rounded-full text-white font-semibold shadow-xl transition"
             >
-              HACER UNA DONACIÓN
+              DONAR
             </Link>
           </div>
         </section>
@@ -71,7 +76,7 @@ export default function Home() {
 
         <div className="text-center mt-12">
           <p className="text-sm text-gray-400">
-            Una vez que hayas hecho tu donación, rellena el formulario en la sección <Link href="/es/confirmation" className="underline text-indigo-300">Confirmación</Link>.
+            Una vez que haya realizado su donación, por favor complete el <Link href="/es/confirmation" className="underline text-indigo-300">formulario de confirmación</Link>.
           </p>
         </div>
       </main>
