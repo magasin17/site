@@ -22,22 +22,20 @@ export default function Home() {
           <ul className="flex gap-6 text-sm items-center">
             <li><Link href="/de/don">Spenden</Link></li>
             <li><Link href="/de/confirmation">Bestätigung</Link></li>
-            <li>
-              <div className="flex gap-2">
-                <Link href="/"><Image src="/fr.png" alt="Français" width={24} height={16} /></Link>
-                <Link href="/en"><Image src="/en.png" alt="English" width={24} height={16} /></Link>
-                <Link href="/es"><Image src="/es.png" alt="Español" width={24} height={16} /></Link>
-              </div>
+            <li className="flex gap-2 items-center">
+              <Link href="/"><Image src="/fr.png" alt="FR" width={24} height={16} /></Link>
+              <Link href="/en"><Image src="/en.png" alt="EN" width={24} height={16} /></Link>
+              <Link href="/es"><Image src="/es.png" alt="ES" width={24} height={16} /></Link>
             </li>
           </ul>
         </nav>
 
         <section className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
-            SPENDEN SIE IN KRYPTOWÄHRUNG UND ERHALTEN SIE EIN EXKLUSIVES HANDBUCH
+            SPENDEN SIE IN KRYPTOWÄHRUNG UND ERHALTEN SIE EINEN EXKLUSIVEN LEITFADEN
           </h1>
           <p className="text-lg text-gray-300 mb-4">
-            Unterstützen Sie uns mit BTC, ETH oder SOL und erhalten Sie dieses Handbuch:
+            Spenden Sie in BTC, ETH oder SOL und erhalten Sie diesen exklusiven Leitfaden:
           </p>
           <span className="relative inline-block text-indigo-300 font-semibold text-lg md:text-xl mb-4">
             <span className="z-10 relative">„Wie man nie wieder Geld mit Krypto verliert“</span>
@@ -76,7 +74,7 @@ export default function Home() {
 
         <div className="text-center mt-12">
           <p className="text-sm text-gray-400">
-            Nach Ihrer Spende, füllen Sie bitte das <Link href="/de/confirmation" className="underline text-indigo-300">Bestätigungsformular</Link> aus.
+            Nachdem Sie gespendet haben, füllen Sie bitte das <Link href="/de/confirmation" className="underline text-indigo-300">Bestätigungsformular</Link> aus.
           </p>
         </div>
       </main>
