@@ -10,20 +10,20 @@ export default function Confirmation() {
   };
 
   return (
-    <main className="min-h-screen px-6 py-10 text-white">
-      <Link href="/es" className="inline-block mb-6">
-        <div className="w-10 h-10 flex items-center justify-center rounded-full border border-white hover:bg-white/10 transition">
+    <main className="min-h-screen px-6 py-10 text-white bg-black">
+      <Link href="/es" className="inline-block mb-8">
+        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition">
           ←
         </div>
       </Link>
-      <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-10 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-blue-500 text-transparent bg-clip-text drop-shadow-xl">
-        CONFIRMACIÓN
-      </h1>
+
+      <h1 className="text-3xl font-bold mb-8">Formulario de Confirmación</h1>
+
       <form
         onSubmit={handleSubmit}
         action="https://formspree.io/f/xeoabrky"
         method="POST"
-        className="max-w-xl mx-auto space-y-6"
+        className="max-w-xl mx-auto space-y-4"
       >
         <input
           type="text"
@@ -51,14 +51,11 @@ export default function Confirmation() {
         >
           Enviar
         </button>
-        {submitted && (
-          <p className="text-green-400">¡Confirmación enviada con éxito!</p>
-        )}
+        {submitted && <p className="text-green-400">¡Confirmación enviada con éxito!</p>}
       </form>
-      <div className="text-center mt-10 text-sm text-gray-400">
-        <p>
-          Una vez validada tu confirmación, recibirás tu guía por correo electrónico. Si no la ves en tu bandeja de entrada, revisa tu carpeta de spam. También puedes volver a enviar este formulario si es necesario.
-        </p>
+
+      <div className="text-center mt-12 text-sm text-gray-400 max-w-xl mx-auto">
+        Una vez validada su confirmación, recibirá su guía por correo electrónico. Si no la encuentra en su bandeja de entrada, verifique la carpeta de spam o vuelva a completar el formulario si es necesario.
       </div>
     </main>
   );
