@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <>
-      {/* Background 3D */}
+      {/* 3D Background */}
       <div
         style={{
           position: 'fixed',
@@ -18,27 +18,29 @@ export default function Home() {
       />
 
       <main className="min-h-screen text-white px-6 py-10">
-        {/* Navigation */}
+        {/* Navigation bar with language flags */}
         <nav className="flex justify-between items-center mb-12 flex-wrap">
           <div className="text-2xl font-bold">cryptolost.net</div>
-          <ul className="flex gap-6 text-sm items-center">
-            <li><Link href="/en/don">Donation</Link></li>
-            <li><Link href="/en/confirmation">Confirmation</Link></li>
-            <li className="flex gap-2 ml-4">
+          <div className="flex items-center gap-4">
+            <ul className="flex gap-6 text-sm">
+              <li><Link href="/en/don">Donation</Link></li>
+              <li><Link href="/en/confirmation">Confirmation</Link></li>
+            </ul>
+            <div className="flex gap-2 ml-4">
               <Link href="/fr">
-                <Image src="/flags/fr.png" alt="Français" width={24} height={16} />
+                <Image src="/flags/fr.png" alt="FR" width={24} height={16} />
               </Link>
               <Link href="/en">
-                <Image src="/flags/gb.png" alt="English" width={24} height={16} />
+                <Image src="/flags/gb.png" alt="EN" width={24} height={16} />
               </Link>
               <Link href="/de">
-                <Image src="/flags/de.png" alt="Deutsch" width={24} height={16} />
+                <Image src="/flags/de.png" alt="DE" width={24} height={16} />
               </Link>
               <Link href="/es">
-                <Image src="/flags/es.png" alt="Español" width={24} height={16} />
+                <Image src="/flags/es.png" alt="ES" width={24} height={16} />
               </Link>
-            </li>
-          </ul>
+            </div>
+          </div>
         </nav>
 
         {/* Main Title */}
@@ -49,16 +51,16 @@ export default function Home() {
 
           {/* Subtitle */}
           <p className="text-lg text-gray-300 mb-4">
-            Contribute in BTC, ETH or SOL and get this exclusive guide:
+            Contribute in BTC, ETH or SOL and receive an exclusive guide:
           </p>
 
-          {/* Guide Title Highlight */}
+          {/* Highlighted guide title */}
           <span className="relative inline-block text-indigo-300 font-semibold text-lg md:text-xl mb-4">
             <span className="z-10 relative">“With this new guide in hand, you'll never lose money in crypto again”</span>
             <span className="absolute left-0 bottom-0 w-full h-1 bg-indigo-500/40 blur-md rounded"></span>
           </span>
 
-          {/* CTA Button */}
+          {/* CTA button */}
           <div className="mt-10">
             <Link
               href="/en/don"
@@ -69,7 +71,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Crypto Logos */}
+        {/* Crypto logos */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20 max-w-5xl mx-auto">
           {[
             { name: 'Bitcoin', image: '/bitcoin.png' },
@@ -90,10 +92,10 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Confirmation Link */}
+        {/* Confirmation link */}
         <div className="text-center mt-12">
           <p className="text-sm text-gray-400">
-            Once your donation is complete, don't forget to fill out the <Link href="/en/confirmation" className="underline text-indigo-300">confirmation form</Link> to receive your guide.
+            After your donation, please fill in the <Link href="/en/confirmation" className="underline text-indigo-300">Confirmation</Link> form to receive your guide.
           </p>
         </div>
       </main>
