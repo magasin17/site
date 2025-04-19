@@ -22,12 +22,10 @@ export default function Home() {
           <ul className="flex gap-6 text-sm items-center">
             <li><Link href="/es/don">Donación</Link></li>
             <li><Link href="/es/confirmation">Confirmación</Link></li>
-            <li>
-              <div className="flex gap-2">
-                <Link href="/"><Image src="/fr.png" alt="Français" width={24} height={16} /></Link>
-                <Link href="/en"><Image src="/en.png" alt="English" width={24} height={16} /></Link>
-                <Link href="/de"><Image src="/de.png" alt="Deutsch" width={24} height={16} /></Link>
-              </div>
+            <li className="flex gap-2 items-center">
+              <Link href="/"><Image src="/fr.png" alt="FR" width={24} height={16} /></Link>
+              <Link href="/en"><Image src="/en.png" alt="EN" width={24} height={16} /></Link>
+              <Link href="/de"><Image src="/de.png" alt="DE" width={24} height={16} /></Link>
             </li>
           </ul>
         </nav>
